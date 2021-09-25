@@ -1,5 +1,6 @@
 import 'tailwindcss/tailwind.css'
 import Head from 'next/head'
+import Header from '../components/Header'
 
 export default function Home() {
   return (
@@ -8,7 +9,13 @@ export default function Home() {
         <title>Facebook</title>
       </Head>
 
-      <h1>Let's build facebook</h1>
+      <Header />
+
+      <main>
+        {/* Sidebar */}
+        {/* Feed */}
+        {/* Widgets */}
+      </main>
     </div>
   )
 }
