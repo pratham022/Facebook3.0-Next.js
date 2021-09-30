@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image';
 import { useSession } from 'next-auth/client';
 
@@ -7,9 +7,30 @@ import { CameraIcon, VideoCameraIcon } from "@heroicons/react/solid";
 
 function InputBox() {
     const [session] = useSession();
+    const inputRef = useRef(null);
 
     const sendPost = (e) => {
         e.preventDefault();
+
+        if(!inputRef.current.value) return;
+
+        const singleData = {
+            message: inputRef.current.value,
+            name: session.user.name,
+            email: session.user.email,
+            image: session.user.image,
+            timestamp: new Date().toLocaleString()
+        };
+
+        fetch("http://localhost:8000/posts", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(singleData)
+          }).then(
+              inputRef.current.value = ""
+          );
     }
 
     return (
@@ -26,6 +47,7 @@ function InputBox() {
                     <input 
                         className="rounded-full h-12 bg-gray-100 flex-grow px-5 focus:outline-none"
                         type="text" 
+                        ref={inputRef}
                         placeholder={`What's on your mind, ${session.user.name} ?`}/>
                     <button 
                         type="submit" 

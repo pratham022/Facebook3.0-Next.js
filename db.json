@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "message": "Hello world",
+      "name": "Prathamesh Thombre",
+      "email": "pthombre657@gmail.com",
+      "image": "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=573243250482240&height=50&width=50&ext=1635161522&hash=AeSa3Y5LcjLrHRqi85A",
+      "timestamp": "9/30/2021, 2:38:56 PM",
+      "id": 1
+    },
+    {
+      "message": "what's up folks?",
+      "name": "Prathamesh Thombre",
+      "email": "pthombre657@gmail.com",
+      "image": "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=573243250482240&height=50&width=50&ext=1635161522&hash=AeSa3Y5LcjLrHRqi85A",
+      "timestamp": "9/30/2021, 2:39:45 PM",
+      "id": 2
+    }
+  ]
+}
